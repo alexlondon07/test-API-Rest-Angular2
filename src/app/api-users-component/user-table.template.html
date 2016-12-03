@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Users</h2>
+            <div>
+                <table class="table table-hover dyntable table-striped">
+                    <thead>
+                        <tr>
+                            <!-- <th class="head0">Action</th> -->
+                            <th class="head0">Item</th>
+                            <th class="head0">Name</th>
+                            <th class="head0">Phone</th>
+                            <th class="head0">Username</th>
+                            <th class="head0">Email</th>
+                            <th class="head0">City</th>
+                        </tr>
+                    </thead>
+                    <colgroup>
+                    <col class="con1" />
+                    <col class="con0" />
+                </colgroup>
+                <tbody>
+                    <tr class="gradeC" *ngFor="let user of users">
+                        <!-- <td class="con0">
+                            <a title="View this user" href="#"><i class="fa fa-eye"></i></a>
+                        </td> -->
+                        <td class = "con0">{{ user.id }}</td>
+                        <td class = "con0">{{ user.name }}</td>
+                        <td class = "con0">{{ user.phone }}</td>
+                        <td class = "con0">{{ user.username }}</td>
+                        <td class = "con0">{{ user.email | lowercase }}</td>
+                        <td class = "con0">{{ user.address.city }}</td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
