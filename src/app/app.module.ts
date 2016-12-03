@@ -9,12 +9,14 @@ import { ApiUsersComponentComponent } from './api-users-component/api-users-comp
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpService } from './http.service';
+import { FormUserComponentComponent } from './form-user-component/form-user-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponentComponent,
-    ApiUsersComponentComponent
+    ApiUsersComponentComponent,
+    FormUserComponentComponent
   ],
   imports: [
     BrowserModule,
