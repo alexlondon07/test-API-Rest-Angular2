@@ -10,13 +10,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpService } from './http.service';
 import { FormUserComponentComponent } from './form-user-component/form-user-component.component';
+import { PipeUser } from './api-users-component/api-users.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponentComponent,
     ApiUsersComponentComponent,
-    FormUserComponentComponent
+    FormUserComponentComponent,
+    PipeUser
   ],
   imports: [
     BrowserModule,

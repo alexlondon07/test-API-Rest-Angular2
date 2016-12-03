@@ -15,8 +15,8 @@ export class FormUserComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(value: any) {
-    alert('Test');
+  onSubmit(userForm: any) {
+    console.log(this.userForm);
   }
 
 }

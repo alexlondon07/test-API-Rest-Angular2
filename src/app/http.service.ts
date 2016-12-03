@@ -40,6 +40,11 @@ import 'rxjs/add/operator/map';
       return this.http.get(this.baseURL + '/users', { headers: this.getHeaders() } ).map((res:Response) => res.json());
     }
 
+    //Post Users
+    postUsers(){
+      return this.http.post(this.baseURL + '/users', { headers: this.getHeaders() } ).map((res:Response) => res.json());
+    }
+
     //Funcion para obtener la cabezera, en caso que tengamos que enviaron parametros adicionales
     private getHeaders(){
       let headers = new Headers();
