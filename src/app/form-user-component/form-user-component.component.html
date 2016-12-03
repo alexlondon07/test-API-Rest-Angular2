@@ -1,3 +1,32 @@
-<p>
-  form-user-component works!
-</p>
+
+<div class="container">
+  <h1>User Form</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" placeholder="" class="form-control" [(ngModel)]="userForm.name"
+      required #name="ngModel" placeholder="Name" autocomplete="false">
+      <span *ngIf="!name.valid && !name.pristine">El name es required.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" placeholder="Email" class="form-control" [(ngModel)]="userForm.username"
+      required #username="ngModel" placeholder="Username" autocomplete="false">
+      <span *ngIf="!username.valid && !username.pristine">El username es required.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" placeholder="Email" class="form-control" [(ngModel)]="userForm.email"
+      required #email="ngModel" placeholder="Email" autocomplete="false">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" name="phone" id="phone" placeholder="Phone" class="form-control" [(ngModel)]="userForm.phone"
+      required #phone="ngModel" placeholder="Phone" autocomplete="false">
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>

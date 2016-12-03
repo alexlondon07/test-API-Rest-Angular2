@@ -26,6 +26,10 @@ import { FormUserComponentComponent } from './form-user-component/form-user-comp
         {
             path: 'user',
             component: ApiUsersComponentComponent
+        },
+        {
+            path: 'user-form',
+            component: FormUserComponentComponent
         }
     ])
   ],

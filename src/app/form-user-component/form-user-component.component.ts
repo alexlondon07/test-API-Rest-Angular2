@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormUserComponentComponent implements OnInit {
 
+  //Declaramos nuestras variable
+  private userForm = { name: '', username: '', email: '', phone: ''}
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit(value: any) {
+    alert('Test');
   }
 
 }
