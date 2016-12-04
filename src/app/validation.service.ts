@@ -45,5 +45,5 @@ export class ValidationService {
         return { 'invalidPhone': true };
       }
     }
-    
+
 }

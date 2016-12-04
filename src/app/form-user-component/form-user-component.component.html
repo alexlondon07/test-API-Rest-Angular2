@@ -1,6 +1,6 @@
 <div class="container">
   <h1>User Form</h1>
-  <form [formGroup]="userFormulario" (submit)="saveUser()">
+  <form [formGroup]="userFormulario" >
     <div class="form-group">
       <label for="name">Name <b class="errLbl">*</b></label>
       <input class="form-control" placeholder="Name required" formControlName="name" id="name" />
@@ -25,6 +25,6 @@
       <control-messages [control]="userFormulario.controls.phone"></control-messages>
     </div>
 
-    <button type="submit" [disabled]="!userFormulario.valid">Submit</button>
+    <button (click)="saveUser()" [disabled]="!userFormulario.valid">Submit</button>
   </form>
 </div>

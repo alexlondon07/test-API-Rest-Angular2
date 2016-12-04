@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Rx';
 
 @Injectable()
   export class HttpService{
@@ -37,15 +38,29 @@ import 'rxjs/add/operator/map';
     //   }
     //Get users
     getUsers(){
-      return this.http.get(this.baseURL + '/users', { headers: this.getHeaders() } ).map((res:Response) => res.json());
+      return this.http.get(this.baseURL + '/users', { headers: this.getHeaders() } )
+      .map((res:Response) => res.json());
     }
 
-    //Post Users
-    postUsers(){
-      return this.http.post(this.baseURL + '/users', { headers: this.getHeaders() } ).map((res:Response) => res.json());
-    }
+    /**
+     * Funcion para enviar los datos de usuarios
+     * [postUsers description]
+     * @param  {any}    dataUser [description]
+     * @return {[type]}          [description]
+     */
+    postUsers(dataUser) {
+     let headers = new Headers({ 'Content-Type': 'application/json' });
+     let options = new RequestOptions({ headers: headers });
 
-    //Funcion para obtener la cabezera, en caso que tengamos que enviaron parametros adicionales
+     let body = JSON.stringify(dataUser);
+     return this.http.post(this.baseURL + '/posts', body, headers).map((res: Response) => res.json());
+   }
+
+    /**
+     * Funcion para obtener la cabezera, en caso que tengamos que enviaron parametros adicionales
+     * [getHeaders description]
+     * @return {[type]} [description]
+     */
     private getHeaders(){
       let headers = new Headers();
       headers.append('Accept', 'application/json');
